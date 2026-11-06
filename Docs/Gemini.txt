@@ -1,0 +1,22 @@
+Larger Issues / Overhauls (The Brainstorm)
+1. The White Line / Edge Artifacting
+You are correct; this is a known issue with linear interpolation on textures containing transparent pixels where the RGB values of the fully transparent pixels are (0,0,0). When OpenGL scales it, it interpolates the color of the visible pixel with the black of the transparent pixel, resulting in a dark/grey fringe.
+The Solution: We need to implement "Premultiplied Alpha" or fix the edge pixels during processing.
+
+Option A (PIL Processing): We can write a PIL function that runs over the loaded assets and bleeds the RGB colors of visible edges into the adjacent transparent pixels before passing them to DPG. This is computationally heavy but solves it perfectly.
+
+Option B (DPG Sampling): If DPG allows it (I need to check the exact dpg.add_dynamic_texture params in your version), we might be able to force Nearest-Neighbor filtering instead of Linear interpolation. This makes scaling blockier but eliminates the fringing entirely.
+
+Let me know if you prefer pixel-perfect scaling (Option A) or crisp/blocky pixels (Option B). Given this is Starsector, Option B might actually look more authentic.
+
+2. The Pop-Out Window Limitation
+The Reality: DearPyGUI is fundamentally built around a single OS window context. Everything inside it is a simulated window rendered by the GPU.
+The Research: DPG does have experimental support for multiple OS-level viewports in newer builds, but the API is volatile.
+The Alternative Workaround: Instead of fighting DPG's architecture, we can build a completely separate, lightweight Python script (e.g., Star_UI_Previewer.py).
+
+When you click "Pop-Out", Star_UI.py launches this second script as a subprocess.
+
+The second script simply reads ui_Layers.json and renders the preview in its own maximized window.
+
+We can use a lightweight IPC (Inter-Process Communication) like a local socket or simply have the previewer poll a temporary .json file for real-time slider updates.
+It's a bit janky, but it guarantees an independent OS window you can drag to a second monitor without crashing the main app.

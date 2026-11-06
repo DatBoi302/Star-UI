@@ -1,0 +1,104 @@
+{
+    "Player": { 
+        "color":[170,222,255,127],
+		"baseUIColor":[170,222,255,255],
+		"secondaryUIColor":[255,155,100,255],
+		"secondarySegments":5,
+		"darkUIColor":[31,94,112,175],
+		"gridUIColor":[70,200,255,75],
+		"brightUIColor":[203,245,255,255]
+	},
+	"Derelict" : {
+		"color":[100,100,100,255],
+		"baseUIColor":[155,155,155,255],
+		"darkUIColor":[31,94,112,175],
+		"gridUIColor":[70,200,255,75]
+	},
+	"Dweller": {
+		"color":[150,10,30,255],
+		"baseUIColor":[150,10,30,255]
+	},
+	"Hegemony": {
+		"color":[245,150,30,255]
+	},
+	"Independent": {
+		"color":[150,150,150,255]
+	},
+	"Knights of Ludd": {
+	 	"color":[30,80,0,255],
+		"baseUIColor":[75,200,0,255],
+		"darkUIColor":[32,85,0,175],
+		"gridUIColor":[95,255,0,75]
+	},
+	"Lions Guard": {
+		"color":[160,0,95,255],
+		"baseUIColor":[200,0,125,255],
+		"darkUIColor":[100,0,60,175],
+		"gridUIColor":[200,0,125,75],
+		"brightUIColor":[231,98,206,255]
+	},
+    "Luddic Church": {
+		"color":[5,115,10,255],	
+		"baseUIColor":[75,200,0,255],
+		"darkUIColor":[32,85,0,175],
+		"gridUIColor":[95,255,0,75]
+	},
+	"Luddic Path": {
+		"color":[180,255,95,255],
+		"baseUIColor":[150,200,0,255],
+		"darkUIColor":[52,85,0,175],
+		"gridUIColor":[180,255,0,75]
+	},
+	"Mercenary": {
+		"color":[150,150,150,255]
+	},
+	"Neutral": {
+		"color":[100,100,100,255],
+		"baseUIColor":[155,155,155,255],
+		"darkUIColor":[31,94,112,175],
+		"gridUIColor":[70,200,255,75]
+	},
+	"Omega": {
+		"color":[70,255,235,255],
+		"baseUIColor":[70,255,235,255]
+	},
+	"Persean League": {
+		"color":[220,185,55,255],
+		"baseUIColor":[75,200,0,255],
+		"darkUIColor":[32,85,0,175],
+		"gridUIColor":[95,255,0,75]
+	},
+	"Pirates": {
+		"color":[255,0,0,255],
+		"baseUIColor":[200,0,0,255],
+		"darkUIColor":[85,0,0,175],
+		"gridUIColor":[255,0,0,75],
+		"brightUIColor":[231,98,103,255]
+	},
+	"Poor": {
+		"color":[150,150,150,255]
+	},
+	"Remnant": {
+		"color":[100,100,100,255],
+		"baseUIColor":[155,155,155,255],
+		"darkUIColor":[31,94,112,175],
+		"gridUIColor":[70,200,255,75]
+	},
+	"Sindrian Diktat": {
+		"color":[180,0,120,255],
+		"baseUIColor":[200,0,125,255],
+		"darkUIColor":[100,100,100,175],
+		"gridUIColor":[120,120,120,75],
+		"brightUIColor":[231,98,206,255]
+	},
+	"Sleeper": {
+		"color":[150,150,150,255]
+	},
+	"Threat": {
+		"color":[130,155,145,255],
+		"baseUIColor":[130,155,145,255]
+	},
+	"Tritachyon": {
+		"color":[135,206,255,255]
+	}
+}

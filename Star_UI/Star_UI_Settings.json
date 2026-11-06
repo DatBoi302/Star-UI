@@ -1,0 +1,582 @@
+{
+    "mod_path": "D:/Games/Starsector\\mods",
+    "current_colors": {
+        "Sector Map UI": {
+            "cloudColor": [128, 128, 128, 255],
+            "asteroidBeltMapColor": [128, 128, 128, 255],
+            "ringSystemMapColor": [128, 128, 128, 255],
+            "iconWaypointColor": [128, 128, 128, 255],
+            "fogOfWarColor": [128, 128, 128, 0],
+            "noiseColor": [128, 128, 128, 255]
+        },
+        "UI Framework": {
+            "standardUIIconColor": [255, 0, 0, 255],
+            "tooltipTitleAndLightHighlightColor": [0, 255, 0, 255],
+            "widgetBorderColorDark": [0, 0, 255, 255],
+            "widgetBorderColorBright": [255, 255, 0, 255],
+            "standardGridColor": [255, 0, 255, 75],
+            "tripadGridColor": [0, 255, 255, 255],
+            "tripadLineColor": [255, 128, 0, 255]
+        },
+        "HUD Buttons": {
+            "buttonBg": [128, 255, 0, 255],
+            "buttonBgDark": [0, 128, 255, 175],
+            "buttonText": [128, 0, 255, 255],
+            "buttonShortcut": [255, 0, 128, 255],
+            "bottomMenuButtonInsetColor": [0, 255, 128, 255]
+        },
+        "Text & Dialogue": {
+            "standardTextColor": [128, 0, 0, 255],
+            "storyOptionColor": [0, 128, 0, 255],
+            "marketFlavorTextColor": [0, 0, 128, 255],
+            "hColor": [128, 128, 0, 255],
+            "textFriendColor": [128, 0, 128, 255],
+            "textNeutralColor": [0, 128, 128, 255],
+            "textGrayColor": [255, 128, 128, 180],
+            "textEnemyColor": [128, 255, 128, 255],
+            "flatRedTextColor": [128, 128, 255, 255],
+            "darkRedTextColor": [255, 255, 128, 255],
+            "yellowTextColor": [255, 128, 255, 255],
+            "darkYellowTextColor": [128, 255, 255, 255]
+        },
+        "Resource Meters & Supply Bars": {
+            "progressBarStandardColor": [64, 0, 0, 255],
+            "progressBarCargoColor": [0, 64, 0, 255],
+            "progressBarCrewColor": [0, 0, 64, 255],
+            "progressBarCrewLossColor": [64, 64, 0, 255],
+            "progressBarFuelColor": [64, 0, 64, 255],
+            "progressBarHullColor": [0, 64, 64, 255],
+            "progressBarCRColor": [255, 64, 64, 255],
+            "progressBarFleetPointsColor": [64, 255, 64, 255],
+            "progressBarHangarSpaceColor": [64, 64, 255, 255],
+            "progressBarOverflowColor": [255, 192, 64, 200],
+            "progressBarWarningColor": [64, 255, 192, 255],
+            "progressBarDangerColor": [192, 64, 255, 255],
+            "graphMarinesColor": [192, 192, 64, 255],
+            "graphSuppliesColor": [192, 64, 192, 255]
+        },
+        "Tactical & Combat UI": {
+            "iconFriendColor": [64, 192, 192, 255],
+            "iconEnemyColor": [255, 128, 64, 255],
+            "iconNeutralShipColor": [64, 255, 128, 255],
+            "weaponArcColor": [128, 64, 255, 102],
+            "weaponArcFFColor": [255, 64, 128, 255]
+        },
+        "Weapon Mounts": {
+            "mountYellowColor": [128, 128, 128, 255],
+            "mountGreenColor": [128, 128, 128, 255],
+            "mountBlueColor": [128, 128, 128, 255],
+            "mountGrayColor": [128, 128, 128, 255],
+            "mountOrangeColor": [128, 128, 128, 255],
+            "mountCyanColor": [128, 128, 128, 255],
+            "mountCompositeColor": [128, 128, 128, 255]
+        },
+        "Design Types": {
+            "Common": [128, 128, 128, 255],
+            "Low Tech": [128, 128, 128, 255],
+            "Midline": [128, 128, 128, 255],
+            "High Tech": [128, 128, 128, 255]
+        },
+        "Factions": {
+            "Remnant": [128, 128, 128, 255],
+            "Pirate": [128, 128, 128, 255],
+            "Hegemony": [128, 128, 128, 255],
+            "Luddic Path": [128, 128, 128, 255],
+            "Luddic Church": [128, 128, 128, 255],
+            "Persean League": [128, 128, 128, 255],
+            "Lion's Guard": [128, 128, 128, 255],
+            "Unknown": [128, 128, 128, 255],
+            "Domain Restricted": [128, 128, 128, 255],
+            "Fabrique Orbitale": [128, 128, 128, 255],
+            "Exodyne Biotech": [128, 128, 128, 255],
+            "Ko Combine": [128, 128, 128, 255],
+            "Eridani-Utopia Terraforming": [128, 128, 128, 255],
+            "Mbaye-Gogol": [128, 128, 128, 255],
+            "Bhilai Astra": [128, 128, 128, 255],
+            "Threat": [128, 128, 128, 255],
+            "Shrouded Dweller": [128, 128, 128, 255]
+        }
+    },
+    "current_faction_colors": {
+        "Player": {
+            "color": [170, 222, 255, 127],
+            "baseUIColor": [170, 222, 255, 255],
+            "secondaryUIColor": [255, 155, 100, 255],
+            "darkUIColor": [31, 94, 112, 175],
+            "gridUIColor": [70, 200, 255, 75],
+            "brightUIColor": [203, 245, 255, 255]
+        },
+        "Derelict": {
+            "color": [100, 100, 100, 255],
+            "baseUIColor": [155, 155, 155, 255],
+            "darkUIColor": [31, 94, 112, 175],
+            "gridUIColor": [70, 200, 255, 75]
+        },
+        "Dweller": {
+            "color": [150, 10, 30, 255],
+            "baseUIColor": [150, 10, 30, 255]
+        },
+        "Hegemony": {
+            "color": [245, 150, 30, 255]
+        },
+        "Independent": {
+            "color": [150, 150, 150, 255]
+        },
+        "Knights of Ludd": {
+            "color": [30, 80, 0, 255],
+            "baseUIColor": [75, 200, 0, 255],
+            "darkUIColor": [32, 85, 0, 175],
+            "gridUIColor": [95, 255, 0, 75]
+        },
+        "Lions Guard": {
+            "color": [160, 0, 95, 255],
+            "baseUIColor": [200, 0, 125, 255],
+            "darkUIColor": [100, 0, 60, 175],
+            "gridUIColor": [200, 0, 125, 75],
+            "brightUIColor": [231, 98, 206, 255]
+        },
+        "Luddic Church": {
+            "color": [5, 115, 10, 255],
+            "baseUIColor": [75, 200, 0, 255],
+            "darkUIColor": [32, 85, 0, 175],
+            "gridUIColor": [95, 255, 0, 75]
+        },
+        "Luddic Path": {
+            "color": [180, 255, 95, 255],
+            "baseUIColor": [150, 200, 0, 255],
+            "darkUIColor": [52, 85, 0, 175],
+            "gridUIColor": [180, 255, 0, 75]
+        },
+        "Mercenary": {
+            "color": [150, 150, 150, 255]
+        },
+        "Neutral": {
+            "color": [100, 100, 100, 255],
+            "baseUIColor": [155, 155, 155, 255],
+            "darkUIColor": [31, 94, 112, 175],
+            "gridUIColor": [70, 200, 255, 75]
+        },
+        "Omega": {
+            "color": [70, 255, 235, 255],
+            "baseUIColor": [70, 255, 235, 255]
+        },
+        "Persean League": {
+            "color": [220, 185, 55, 255],
+            "baseUIColor": [75, 200, 0, 255],
+            "darkUIColor": [32, 85, 0, 175],
+            "gridUIColor": [95, 255, 0, 75]
+        },
+        "Pirates": {
+            "color": [255, 0, 0, 255],
+            "baseUIColor": [200, 0, 0, 255],
+            "darkUIColor": [85, 0, 0, 175],
+            "gridUIColor": [255, 0, 0, 75],
+            "brightUIColor": [231, 98, 103, 255]
+        },
+        "Poor": {
+            "color": [150, 150, 150, 255]
+        },
+        "Remnant": {
+            "color": [70, 255, 235, 255],
+            "baseUIColor": [70, 255, 235, 255],
+            "darkUIColor": [31, 94, 112, 175],
+            "gridUIColor": [70, 200, 255, 75]
+        },
+        "Sindrian Diktat": {
+            "color": [180, 0, 120, 255],
+            "baseUIColor": [200, 0, 125, 255],
+            "darkUIColor": [100, 0, 60, 175],
+            "gridUIColor": [200, 0, 125, 75],
+            "brightUIColor": [231, 98, 206, 255]
+        },
+        "Sleeper": {
+            "color": [150, 150, 150, 255]
+        },
+        "Threat": {
+            "color": [130, 155, 145, 255],
+            "baseUIColor": [130, 155, 145, 255]
+        },
+        "Tritachyon": {
+            "color": [135, 206, 255, 255]
+        }
+    },
+    "active_faction_keys": {
+        "Player": [
+            "color",
+            "baseUIColor",
+            "darkUIColor",
+            "gridUIColor"
+        ],
+        "Derelict": [
+            "color",
+            "baseUIColor"
+        ],
+        "Dweller": [
+            "color",
+            "baseUIColor"
+        ],
+        "Hegemony": [
+            "color"
+        ],
+        "Independent": [
+            "color"
+        ],
+        "Knights of Ludd": [
+            "color",
+            "baseUIColor",
+            "darkUIColor",
+            "gridUIColor"
+        ],
+        "Lions Guard": [
+            "baseUIColor",
+            "darkUIColor",
+            "gridUIColor",
+            "brightUIColor"
+        ],
+        "Luddic Church": [
+            "color",
+            "baseUIColor",
+            "darkUIColor",
+            "gridUIColor"
+        ],
+        "Luddic Path": [
+            "color",
+            "baseUIColor",
+            "darkUIColor",
+            "gridUIColor"
+        ],
+        "Mercenary": [
+            "color"
+        ],
+        "Neutral": [
+            "color",
+            "baseUIColor"
+        ],
+        "Omega": [
+            "color",
+            "baseUIColor"
+        ],
+        "Persean League": [
+            "color"
+        ],
+        "Pirates": [
+            "color",
+            "baseUIColor",
+            "darkUIColor",
+            "gridUIColor",
+            "brightUIColor"
+        ],
+        "Poor": [
+            "color"
+        ],
+        "Remnant": [
+            "color",
+            "baseUIColor"
+        ],
+        "Sindrian Diktat": [
+            "color",
+            "baseUIColor",
+            "darkUIColor",
+            "gridUIColor",
+            "brightUIColor"
+        ],
+        "Sleeper": [
+            "color"
+        ],
+        "Threat": [
+            "color",
+            "baseUIColor"
+        ],
+        "Tritachyon": [
+            "color"
+        ]
+    },
+    "app_theme": "Hegemony MAX",
+    "show_borders": true,
+    "preferred_root": "graphics_basegame",
+    "rec_color": [0, 255, 0, 255],
+    "global_adjustments": {
+        "h": 0.0,
+        "s": 0.0,
+        "v": 0.0
+    },
+    "texture_global_adjustments": {
+        "h": 0.0,
+        "s": 0.0,
+        "v": 0.0
+    },
+    "enable_scroll_zoom": true,
+    "live_preview_bg": "Nebula_Retina.png",
+    "texture_settings": {
+        "graphics_basegame/ui/bottomright_course_holder_widget.png": {
+            "h": 0.0,
+            "s": 1.0,
+            "v": 1.0,
+            "a": 1.0,
+            "contrast": 1.0,
+            "gamma": 1.0,
+            "noise": 0.0,
+            "scanlines": 0.0,
+            "tint_enabled": false,
+            "tint_color": [255, 255, 255, 255],
+            "chroma_enabled": false,
+            "chroma_target": [0, 255, 0, 255],
+            "chroma_replace": [0, 0, 0, 0],
+            "chroma_tol": 50.0,
+            "filter_grayscale": false,
+            "filter_invert": false,
+            "filter_edges": false
+        },
+        "graphics_basegame/ui/bottomright_location_name_field.png": {
+            "h": 0.0,
+            "s": 1.0,
+            "v": 1.0,
+            "a": 1.0,
+            "contrast": 1.0,
+            "gamma": 1.0,
+            "noise": 0.0,
+            "scanlines": 0.0,
+            "tint_enabled": false,
+            "tint_color": [255, 255, 255, 255],
+            "chroma_enabled": false,
+            "chroma_target": [0, 255, 0, 255],
+            "chroma_replace": [0, 0, 0, 0],
+            "chroma_tol": 50.0,
+            "filter_grayscale": false,
+            "filter_invert": false,
+            "filter_edges": false
+        },
+        "graphics_basegame/ui/bottomright_course_holder_off.png": {
+            "h": 0.0,
+            "s": 1.0,
+            "v": 1.0,
+            "a": 1.0,
+            "contrast": 1.0,
+            "gamma": 1.0,
+            "noise": 0.0,
+            "scanlines": 0.0,
+            "tint_enabled": false,
+            "tint_color": [255, 255, 255, 255],
+            "chroma_enabled": false,
+            "chroma_target": [0, 255, 0, 255],
+            "chroma_replace": [0, 0, 0, 0],
+            "chroma_tol": 50.0,
+            "filter_grayscale": false,
+            "filter_invert": false,
+            "filter_edges": false
+        },
+        "graphics_basegame/ui/bottomright_radar_holder.png": {
+            "h": 0.0,
+            "s": 1.0,
+            "v": 1.0,
+            "a": 1.0,
+            "contrast": 1.0,
+            "gamma": 1.0,
+            "noise": 0.0,
+            "scanlines": 0.0,
+            "tint_enabled": false,
+            "tint_color": [255, 255, 255, 255],
+            "chroma_enabled": false,
+            "chroma_target": [0, 255, 0, 255],
+            "chroma_replace": [0, 0, 0, 0],
+            "chroma_tol": 50.0,
+            "filter_grayscale": false,
+            "filter_invert": false,
+            "filter_edges": false
+        },
+        "graphics_uiaotdaashpad/ui/bottomright_radar_holder.png": {
+            "h": 0.0,
+            "s": 1.0,
+            "v": 1.0,
+            "a": 1.0,
+            "contrast": 1.0,
+            "gamma": 1.0,
+            "noise": 0.0,
+            "scanlines": 0.0,
+            "tint_enabled": false,
+            "tint_color": [255, 255, 255, 255],
+            "chroma_enabled": false,
+            "chroma_target": [0, 255, 0, 255],
+            "chroma_replace": [0, 0, 0, 0],
+            "chroma_tol": 50.0,
+            "filter_grayscale": false,
+            "filter_invert": false,
+            "filter_edges": false
+        },
+        "graphics_uiaotdaashpad/ui/aotd_button.png": {
+            "h": 0.0,
+            "s": 1.0,
+            "v": 1.0,
+            "a": 1.0,
+            "contrast": 1.0,
+            "gamma": 1.0,
+            "noise": 0.0,
+            "scanlines": 0.0,
+            "tint_enabled": false,
+            "tint_color": [255, 255, 255, 255],
+            "chroma_enabled": false,
+            "chroma_target": [0, 255, 0, 255],
+            "chroma_replace": [0, 0, 0, 0],
+            "chroma_tol": 50.0,
+            "filter_grayscale": false,
+            "filter_invert": false,
+            "filter_edges": false
+        },
+        "graphics_basegame/ui/campaign_abilities.png": {
+            "h": 0.0,
+            "s": 1.0,
+            "v": 1.0,
+            "a": 1.0,
+            "contrast": 1.0,
+            "gamma": 1.0,
+            "noise": 0.0,
+            "scanlines": 0.0,
+            "tint_enabled": false,
+            "tint_color": [255, 255, 255, 255],
+            "chroma_enabled": false,
+            "chroma_target": [0, 255, 0, 255],
+            "chroma_replace": [0, 0, 0, 0],
+            "chroma_tol": 50.0,
+            "filter_grayscale": false,
+            "filter_invert": false,
+            "filter_edges": false
+        },
+        "graphics/ui/bottomright_radar_holder.png": {
+            "h": 0.0,
+            "s": 1.0,
+            "v": 1.0,
+            "a": 1.0,
+            "contrast": 1.0,
+            "gamma": 1.0,
+            "noise": 0.0,
+            "scanlines": 0.0,
+            "tint_enabled": false,
+            "tint_color": [255, 255, 255, 255],
+            "chroma_enabled": false,
+            "chroma_target": [0, 255, 0, 255],
+            "chroma_replace": [0, 0, 0, 0],
+            "chroma_tol": 50.0,
+            "filter_grayscale": false,
+            "filter_invert": false,
+            "filter_edges": false
+        },
+        "graphics_2/ui/bottomright_radar_holder.png": {
+            "h": 0.0,
+            "s": 1.0,
+            "v": 1.0,
+            "a": 1.0,
+            "contrast": 1.0,
+            "gamma": 1.0,
+            "noise": 0.0,
+            "scanlines": 0.0,
+            "tint_enabled": false,
+            "tint_color": [255, 255, 255, 255],
+            "chroma_enabled": false,
+            "chroma_target": [0, 255, 0, 255],
+            "chroma_replace": [0, 0, 0, 0],
+            "chroma_tol": 50.0,
+            "filter_grayscale": false,
+            "filter_invert": false,
+            "filter_edges": false
+        },
+        "graphics_basegame/ui/campaign_infowidget_compact2.png": {
+            "h": 0.0,
+            "s": 1.0,
+            "v": 1.0,
+            "a": 1.0,
+            "contrast": 1.0,
+            "gamma": 1.0,
+            "noise": 0.0,
+            "scanlines": 0.0,
+            "tint_enabled": false,
+            "tint_color": [255, 255, 255, 255],
+            "chroma_enabled": false,
+            "chroma_target": [0, 255, 0, 255],
+            "chroma_replace": [0, 0, 0, 0],
+            "chroma_tol": 50.0,
+            "filter_grayscale": false,
+            "filter_invert": false,
+            "filter_edges": false
+        },
+        "graphics_uiaotdaashpad/ui/campaign_infowidget_compact2.png": {
+            "h": 0.0,
+            "s": 1.0,
+            "v": 1.0,
+            "a": 1.0,
+            "contrast": 1.0,
+            "gamma": 1.0,
+            "noise": 0.0,
+            "scanlines": 0.0,
+            "tint_enabled": false,
+            "tint_color": [255, 255, 255, 255],
+            "chroma_enabled": false,
+            "chroma_target": [0, 255, 0, 255],
+            "chroma_replace": [0, 0, 0, 0],
+            "chroma_tol": 50.0,
+            "filter_grayscale": false,
+            "filter_invert": false,
+            "filter_edges": false
+        },
+        "graphics/ui/campaign_infowidget_compact2.png": {
+            "h": 0.0,
+            "s": 1.0,
+            "v": 1.0,
+            "a": 1.0,
+            "contrast": 1.0,
+            "gamma": 1.0,
+            "noise": 0.0,
+            "scanlines": 0.0,
+            "tint_enabled": false,
+            "tint_color": [255, 255, 255, 255],
+            "chroma_enabled": false,
+            "chroma_target": [0, 255, 0, 255],
+            "chroma_replace": [0, 0, 0, 0],
+            "chroma_tol": 50.0,
+            "filter_grayscale": false,
+            "filter_invert": false,
+            "filter_edges": false
+        },
+        "graphics_2/ui/campaign_infowidget_compact2.png": {
+            "h": 0.0,
+            "s": 1.0,
+            "v": 1.0,
+            "a": 1.0,
+            "contrast": 1.0,
+            "gamma": 1.0,
+            "noise": 0.0,
+            "scanlines": 0.0,
+            "tint_enabled": false,
+            "tint_color": [255, 255, 255, 255],
+            "chroma_enabled": false,
+            "chroma_target": [0, 255, 0, 255],
+            "chroma_replace": [0, 0, 0, 0],
+            "chroma_tol": 50.0,
+            "filter_grayscale": false,
+            "filter_invert": false,
+            "filter_edges": false
+        },
+        "graphics_3/ui/campaign_infowidget_compact2.png": {
+            "h": 0.0,
+            "s": 1.0,
+            "v": 1.0,
+            "a": 1.0,
+            "contrast": 1.0,
+            "gamma": 1.0,
+            "noise": 0.0,
+            "scanlines": 0.0,
+            "tint_enabled": false,
+            "tint_color": [255, 255, 255, 255],
+            "chroma_enabled": false,
+            "chroma_target": [0, 255, 0, 255],
+            "chroma_replace": [0, 0, 0, 0],
+            "chroma_tol": 50.0,
+            "filter_grayscale": false,
+            "filter_invert": false,
+            "filter_edges": false
+        }
+    },
+    "active_roots": {
+        "ui/bottomright_radar_holder.png": "graphics_2",
+        "ui/campaign_infowidget_compact2.png": "graphics_3"
+    }
+}

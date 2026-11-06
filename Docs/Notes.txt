@@ -1,0 +1,516 @@
+
+ Compile:
+ pyinstaller --onefile --noconsole --icon=Star_UI_Icon.ico Star_UI.py 
+
+ - Complimentary colors? Randomize colors? Any improvements in this regard?
+
+ - Other editabled variables found in the settings.json:
+ 
+ "defaultFont":"graphics/fonts/insignia15LTaa.fnt",
+ "italicsShearFactor":0.2, # for default LabelAPI.italicize(); amount of shear to the right
+ "enableCampaignMapGridLines":true,
+ "slipstreamUseGLLines":true,
+ "showCampaignRadar":true,
+
+
+
+
+	Goals:
+		- Better formatting / readability / user experience
+		- Refine application / Better Folder Structure
+		- Github release
+{
+	Questions for AI and Community:
+		- Better dscriptions for UI elements, aka which element color represents what in game
+		- What settings.json color overlay is applied to what UI .png element
+		- User made presets for Settings.json and .png items
+
+	Gemini:
+		x - It's time that we make some final UI refinements and finalize a few missing features.
+		
+		Formatting UI:
+		x - Is it possible to remove the Windows window header at the top of the application, and in its place create our own? If so, please implement this, if not thats fine.
+		x - These application elements should all be moved to a dedicated always visible top bar and in this order from left to right: "Settings", "Config Editor", "Texture Lab", MessageLog/Notifications box,"Generate Mod"
+		x - The Config Editors dedicated top header bar should have from left to right: Search box, "Global Adjust", "Restore Defaults", Save Preset box, Load Preset box (These only effect the Config Editor)
+		x - The Texture Labs dedicated top header bar should have from left to right: Search box, Global Adjust - but called "Adjust All Textures" , "Restore All Defaults" (Tooltip: "Restore all textures to Default Color"), Save Preset box, Load Preset box (for our folder Star_UI/Star UI Settings Presets), 5 Quick copy slots so if we like a color we did to a texture, we can copy it and apply it to other textures (Right click to copy adjustment values, Left click to paste onto texture). (These only effect the texture Lab)
+		
+		x - The un-decorated window looks amazing, however, I cannot seem to drag it anywhere. It also needs to have the standard minize and fullscreen buttons aswell.
+		x - The copy/paste quick slots do not function at all.
+		x - Adjust all textures should not obscure the background, the value of the sliders should be saved and applied in real time, there is no need for an "apply" button, just a "reset" button (it should function just like the "global adjust" for the config editor).
+		
+		------------
+		x - I'm unsure if the undecorated functionality is working smoothly. I can drag the application, however after fullscreening then un-fullscreening the window twice, the windows decorate bar re-appeared. Additionally, the UI elements inside the application do not seem to scale properly when full screened. There is alot of dead space to the bottom and the right when fullscreened. 
+		x - Fullscreen button Icon looks formatted incorrectly, [ ] seems to be hanging outside the button.
+		x - Color copy quick slots should visually be the color that is applied to them.
+		
+		Texture Lab UI:
+		x - Add a search function.
+		x - Each individual texture edior area should have its own "Reset" button that only applys to that specific texture.
+		x - Make it so that the "Apply Config Tint" is updated in realtime when left checked (currently only updates when toggled on/off).
+		x - Library .png list can be seperated into dropdowns based off their respective folders (similiar to how we did it in the config editor).
+		x - Can we make it so that Preview .png Images are displayed from the middle of their UI box, if so please implement.
+		-----------------------------------------------------------------------------
+		
+		x - In the Config Editor Section, format the search bar so that it appears like the one in the Texture lab, IE: remove the white text beside the bar and instead implement the slightly opaque text inside the search bar, exactly how you did it in the Texture Lab. (FYI: I've already installed ImageController into my Python enviorment)
+		x - Implement ImageController, such as the ZoomPan function we found earlier. My suggestion would be to add a slider above the "Adjustments" section in the texture lab, with this slider we'll be able to increase the size of the image, making it easier to edit. (This WONT increase the true pixel size of the image when exported, it's purely just to help us see while editing.)
+		x - In the Main Header, the message box could be made slightly larger (height and width), and the text inside could be made highlight-able so users could copy it if needed.
+				
+		x - The "Cache" folder we created, is it actually used for anything, or just a left over from an un-used feature?
+		x - Would it be better for us to move "Color Descriptions" and "Color Defaults" to their own .json file, outside of the python script?
+		x - Folder structure:
+		 -[Folder] Cache
+		 -[Folder] Data
+		 -[Folder] Presets
+		    -[Folder] Settings (Config editor presets)
+			-[Folder] Textures (Texture Lab presets)
+		 - settings.json
+		 - Color_Defaults.json
+		 - Color_Descriptions.json
+		x -----------------------------------
+		x Do not rebuild the code yet, first discuss this with me:
+		 
+		x Can we use any of this to enhance the application? The application window itself feels awkward, and always starts half-way off my screen, perhaps these could help with the re-sizing and making the app feel more premium, or even allow us to use the window un-decorated. What can we implement from these resources (4 links below)?
+		x https://github.com/my1e5/dpg-examples/tree/main/window
+		x https://github.com/my1e5/dpg-examples/tree/main/sizing
+		x https://github.com/my1e5/dpg-examples/tree/main/persistence
+		x https://github.com/DataExplorerUser/wrap
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Do not edit the script yet, first lets review and discuss...
+		
+Could any of this be of use?
+Style-Editor:
+https://dearpygui.readthedocs.io/en/latest/tutorials/tips-resources.html#style-editor		 
+Menubar:
+https://dearpygui.readthedocs.io/en/latest/documentation/menus.html
+https://github.com/my1e5/dpg-examples/tree/main/menubar
+		 
+- I am particularly interested in the "Style-Editor", perhaps we can implement this in the settings menu, but in such a way that it's useful and the background isn't obscured.
+- The "Menu"/"Menubar" might be a far cleaner solution then floating pop-ups for items like the "Global Adjustments", "Adjust All Textures (Offset)", and "Custom Color" picker.
+Thoughts?
+
+---------------- 
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+ 1) The stretchy windows has been partially fixed. It still occurs with these specific buttons: (Config editor) "Restore Defaults" and (Texture Lab) "Restore all Defaults".
+ 2) Can you make the "fear the bottom" flip upward logic for the custom color picker just a bit more aggresive? It works currently, but theres a slight margin where the window doesn't flip if its hanging off the screen by only a few pixels.
+ 3) The Click-Outside-To-Close logic doesnt seem to work. The windows remain open, only closing when pressing Done/Cancel/X. Perhaps attempt to implement this feature again. Worth a shot looking into this, or any other resources on this entire document (https://dearpygui.readthedocs.io/en/latest/documentation/popups.html).
+
+------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-------------------
+
+
+		 x - I need you to change the format for all of the .json files that are created/handled by the application, this includes the default_colors/descriptions .json created when using the app, the settings.json exported when generating mods, config/texture presets we save, etc etc. Right now they are formatted in default .json, but Starsector uses the prettier version, the computer reads it the same, but users might find it easier to use the prettier version. Im unsure the exact format name, but can you set the .json's to be "beautified"/"Pretty Print", IE: Each arguement takes up one line, so it would look/print like-> "Name": [#,#,#,#],
+		x - Additionally, just like we create a Star_UI/Default_Colors.json and Star_UI/Default_Descriptions.json, please also now print a Application_Themes.json with all the themes from lines ~209-270 (Pretty format if applicable).
+============================================================================================================================================================================================
+
+		x Do not edit the script yet, first lets discuss...
+		
+		Other Data files for the "Texture Lab": 
+		x - Allow users to select different Data folder, or switch between more than one. The thought being, what if a user wants to use different UI assests from another mod.
+		x - My solution/idea is (seemingly) simple. The "Texture Lab" will search the "Data/graphics/..." folder just like before, however, we will add a modifier IE: users can add another graphics folder by naming it "graphics_2" (graphics_3, etc, etc).
+		
+		x - Then, in the texure lab the .pngs will be disaplyed as normal, but we will now add a Left and Right arrow, with a check box in the middle ( <  []  > ). If there is no alternate image of the same name in another graphics_# folder, then the button will do nothing (maybe make it opaque), however, if there is another image of the same name found, the arrows will cycle through the images of the same name that are avaliable. The check box can be used for the user to select which image they want to use out of what's avaliable (however, we'd have to set a stop gap measure so that the user doesn't check mark both images of the same name).
+
+		x - Additionally, we can add a priority check box for the two seperate libraries, which ever one is checked will be the one the one that is used (if the assests even need to be used, we dont want to load un-edited assests as that would be pointless for the point of the mod), however, that priority is superceeded by the individual per image check box.
+=============================================================================================
+
+	x - Works great, but last selected folder takes priority on the next selected image.
+	
+	x - Are the graphics folders used to search in the texture lab/does it work like this? [ Graphics | Graphics_2 | Graphics_3 | etc ]
+	
+======================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
+	
+	
+	x Formatting Application UI + Polishing:
+	
+	x - There is a very small area of un-used deadzone underneath the Color Columns and Live Preview in the "Config Editor" and underneath the Virtual Library and Image viewer/editor in the "Texture Lab". I'd say its 15px that you can use to expand those aforementioned windows down by.
+	x - "Global Adjustments" in the "Config Editor" & "Adjust All Textures (Offset)" in the "Texture Lab" should have their slider values saved to the applications .json so that upon closing and re-opening the application, the sliders will be in the same position the user last set them too.
+	x - In the "Texture Lab" there is a "Apply Current Settings to All" button. This button should have the same style of confirmation popup that the "Restore all Defaults" button has.
+	x - In the "Texure Lab" when pressing the "Reset Current Texture" button, the "Adjustments" sliders should reset back to their default 0 position.
+	x - In the "Settings" menu, remove the "Print Theme Template to Console" function/button.
+	x - For the "Custom Color" popup window in the custom color picker column, please expand/adjust the UI pop window so that everything is displayed without needing to scroll left or right.
+=========================================================================================================================================================================================================================================================
+=========================================================================================================================================================================================================================================================
+=========================================================================================================================================================================================================================================================
+
+
+import dearpygui.dearpygui as dpg
+
+dpg.create_context()
+
+dpg.show_documentation()
+dpg.show_style_editor()
+dpg.show_debug()
+dpg.show_about()
+dpg.show_metrics()
+dpg.show_font_manager()
+dpg.show_item_registry()
+
+dpg.create_viewport(title='Custom Title', width=800, height=600)
+dpg.setup_dearpygui()
+dpg.show_viewport()
+dpg.start_dearpygui()
+dpg.destroy_context()
+
+
+
+			OR
+
+	
+import dearpygui.dearpygui as dpg
+
+dpg.create_context()
+dpg.create_viewport()
+dpg.setup_dearpygui()
+
+dpg.show_item_registry()
+
+dpg.show_viewport()
+dpg.start_dearpygui()
+dpg.destroy_context()
+
+
+import dearpygui.dearpygui as dpg
+
+dpg.create_context()
+dpg.create_viewport()
+dpg.setup_dearpygui()
+
+dpg.show_font_manager()
+
+dpg.show_viewport()
+dpg.start_dearpygui()
+dpg.destroy_context()		
+		x - Save adjustment/color data per individual image, even of the same name.
+
+		x  - Idea, "Mod Importer" - allow users to import parts from a mod. Select the mod zip/folder (either or, if possible). Then, the user will be prompted with a selection screen. The will have the option to import color preset IE: If a settings.json is detected, the values will be added to a newly created preset of the mods name (gotten from mod_info.json), any values not in the .json will be taken instead be taken from the default_colors.json. Next they will have the option to import textures from the mods graphics folder (allow the user to choose all or which indivual assests get imported), these items will then be copied over into a new graphics_# folder (create a new folder that with a number larger than the current largest graphics_# folder).
+		 
+
+
+
+
+
+       x   - The Image preview in the import screen now works great, however, the location of the preview window is still to far to the right and not below the "Select All / None / Recomended" Buttons. It needs to be in line with the file name list and the under the selction buttons. Additionally, the selection buttons need to be lowered.
+	x  	 - In the Texture lab, add an On/Off Toggle to the Color Picker element. Additionally format all the image editing elements in the Texture labs middle column so that they fit neater. Currently, the "advanced" tools button extends all the way to the right side of the application. We want the end result to be that users do not have to scroll down to select/use any of the tools.
+		x  - Add the values of "Global Adjust" in the "Config Editor" and the "Adjust All Textures (Offset)" in the "Texture Lab" to also be saved when saving a new preset .json.
+		x  - Add a Text input box next to the "Generate Mod" button. Make it perfectly centered so it doesnt look awkward, meaning it will be centered by height in the middle point of the Generate Mod button. This text box is for custom naming the mod, if the user chooses. Without input, the text will be opaque and say "Star_UI", (the default name). If nothing is writen in the box when users click it, the mod will resort to its default name, however, if users do write text in the box, then that text will be what is used for the naming of the mods folder (IE: [Star_UI/mod_info.json] > [Example_Name/mod_info.json]) and for the naming of the mod within the mod_info.json (IE: "name":"Star_UI", > "name":"Example_Name",).
+		 
+	 
+	x - Important notes: The transparent Black pixels that make up the background need to either stay the same, or be removed completely but not drawn over (I can go back later on and add the transparent background layer behind the image). Reason being is those areas are where the information from the UI is displauyed, so those sections need to have some read-ablity to them.
+	
+	x - Attached is an organized .png of all the possible UI assets in Starsector. I would like to see them re-created in a usable fashion.
+	
+	x - Important notes: The transparent black areas need to remain atleast somewhat legiable or transparent, or be left 100% transparent (and I'll add a dark layer behind them later) as this is where the user reads information, so it needs to be clean in those areas. Also, leave space between each asset so that I may crop them out later.
+	
+	x - I'm looking for diegetic / skuemorphic design elements. I'm giving you the greenlight to use any of these themes/inspiration: Retro-futurism, Cassette-futurism (Alien Franchise), the PC game "Highfleet", and real-world jet/space cockpits.
+	
+=========================================================================================================================================================================================================================================================
+=========================================================================================================================================================================================================================================================
+=========================================================================================================================================================================================================================================================
+		x - Recolor and Chroma Key alpha slider is gone, Chroma ket doesnt apply to adjustments made, possible fix? and Greyscale/invert occasioanlly fill in the transparent parts.
+		
+		x 1. Move the mod naming text box to the left of the Generate mod button (You can shrink the message/notification box some, that is to the left of it, to give some room). Next, underneath that text box, add a loading bar that is the same length as the text box, they should be uniform. This loading bar will display the export progress when generating a mod. If we don't have an avaliable loading bar, there is this on for DearpyGui (https://github.com/my1e5/dpg-examples/blob/main/threading/progress_bar.py).
+		
+		x 2. Make the Restore all Defaults buttons, in both the Config Editor and Texture Lab, now also reset back to zero their respective Global Adjust/Adjust All offset Sliders.
+		
+		x 3. In the texture lab, the Recolor and Chroma Key's alpha slider is gone, please re-enable them. 
+		x 3.1 The Chroma key doesnt apply to adjustments made to the image by the editor, only to original colors. Meaning if I adjust the hue using our sliders, making a once pink image blue, chroma key is still only going to look for pink. Is it at all possible to get the chroma key working with other user adjustments to the images color? (That seems unlikely, I know...)
+		 x 3.2 The Greyscale/Invert functions will occasioanlly fill in the transparent parts of an image, or just come out looking incredibly cursed. I want keep the functions no matter what, but is there any way to "fine tune" these?
+
+		x 4. Are there any additional editing functions we can add to the Texture Lab that you've not mentioned yet, that could be of use for our UI modding tool?
+==============================================================
+
+	x 	Texture Lab:
+	x 	1. Keep all the tools intact, but remove the drop down button for "Advanced Tools". No need to hide tools.
+	x 	2. Give "Reset Current Texture" a 10px high spacer above and below the button.
+	x 	3. Move the Adjustments Alpha slider below the Gamma slider.
+	x 	4. In the preview window, the left and right arrows used to switch the "Preview Source" along with the checkbox for "Use this Source for Export" shift postion due to the length of the name of the preview source when cycling through different sources. Please remedy this, a possible solution would be to move the "Preview Source: ----" text to the right of the export checkbox.
+	x 	5. In the virtual library file list, it can be easy to lose your positioning. Make it so that the currently viewed file/clicked button in the Virtual Library is highlighted.
+=======================================================================================================================================================================================================================================================
+	
+	x Im very impressed, great work.
+	x In the Faction Editor:
+	x  	1. Player faction (player.faction) needs to take priority, being at the top of the list.
+	x 	2. Left of the Color Picker coloumn should be a default color coloumn that allows user to select it, which resets the color picker back to default. (reference the config editor as it has the same function).
+	x 	3. At the Faction Editor top bar needs to be a "Reset to Defaults" button that resets all faction colors to default.
+	x 	4. The Faction Editor top bar should have a save/load preset system, similiar to all other tabs. These presets will remember colors and on/off data. It will be saved in "Star_UI/Presets/Factions". 
+========================================================================================================================================================================================================================		
+	
+	This script is large, therefore you may not be able to properly send it back to me with all the edits you make. Therefore, format it in a way that I can use Beyond Compare 5 to merge your script edits with my full script, and merge the changes you've made.
+	1. In "Faction Colors", the drop down menus by default should be expanded instead of collapsed.
+	2. In "Faction Colors", the color picker window should be locked to the color picker button (just like how its done in the "Config Editor").
+	3. In "Faction Colors", remove The "Harmonies" Header/Column.
+	4. In "Faction Colors", Order the list of factions (starting from the top): Player > Independant > Hegemony  > Sindrian Diktat > Persean League > Tritachyon > Luddic Church > Pirates > Luddic Path > Remnant | ~ Order does not matter for the rest of list. 
+	5. In "Faction Editor", clear the live preview so we can replace it with faction flags.
+	
+	
+
+	- System message box actaully send out useful info 
+		- Clear the python script (themes, defaults,etc) to strictly .jsons <<< Could possible do this more??
+		- Keybinds?
+
+		Live-preview Enhancements:
+		- The current iteration works, but is hardly passable or even representative of the actual look in game.
+		- What is the best way to approach this?
+		- Can I somehow give you assests from the game to create this live preview?
+		- At one point you mentioned me giving you "layers" or a "layered image".
+		- Perhaps we could pull .pngs from the assest lab, especially the ones we re-color? Since Starsectors Settings.json will be overlaying the colors we set over that texture. That might not be feasible though. 
+		- Additional notes: Remove the "Live Config Preview" text to save room. Futhermore, we should attempt to format the preview in such a way that it fits onto the entire screen (when the window is maximized) without the need for a scrollbar, IE: if we had 4 images, we could do a 2x2 grid and assure they fit without needing a scrollbar.
+
+----------------
+		 
+		 - Keybinds
+
+		  - Where is the loading bar you implemented on importing files? I assume I don't see it because the import is so fast, still just curious as to where it is.
+		 
+John	-  Edit Size of Settings Window
+		 - Edit sizing of the popup/button windows
+		 - Edit wording in app
+		 - Edit descriptions of Colors
+		 - Adjust UI Sizing/Formatting/Polish (Especially with the Texture Lab)
+		 - sort factions
+		 
+		 - Create some Config/Texture presets
+		 - Create Textures
+
+
+		 
+		 - Export to Github
+		
+========= Discussion =================
+
+ Do not rewrite this script yet, we need to discuss some things:
+ 
+ 1. Can keys/keybinds be used to navigate or use this program? This isnt that important, more so just curious.
+ 
+x  2. Due to our "graphics_#" naming scheme, its impossible for users to share texture presets since some people will have imported UI mods in different order, making their graphics_# different then others. Do you have any ideas on how we could fix this?
+ 
+x  3. We missed a crucial part of UI customization: In the [Starsector\starsector-core\data\world\factions] folder are ".FACTION File"s, these appear to be formatted just like .json files (Example of a filename = "player.faction"). There is a file for every faction and sub-faction, and most importatntly: THE PLAYERS FACTION. Inside these ".FACTION" files are data on said faction, but they are important to us because roughly 1-3 arguements inside the file handle the factions COLOR. We will need to address implementing these into our Apps UI, and mod exporting function. As of now I think a new tab in-between the config editor and texture lab will due, we will most likely use the Config Editor as a template on how to format this new section. I can give you more detail later, but I'd like to hear your intial thoughts first.
+ 
+ 4. Live Preview: We will soon need to address the applications terrible UI Preview. I can make images for it, you can tell me what you need to make a better version of it, but first I'd like to know if it would be possible to use whatever textures are selected by the user in the texture lab, to make up the different parts of the Live Preview. Then, if possible, we will mask over them with the selected colors in the Config Editor. I know this is a large task, so it will require alot of time and thought put into it.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+====================== RESHADE =========================
+
+			- Don't delete the Reshade_Presets Folder when removing a game from the manager.
+			- Chnage the "X" to "Remove" so its more clear that were removing Reshade.
+			- Allow the User to rename the tile for handled games.
+			- Add a drop down menu to each tile in which the user can override/select a different reshade .dll option (dxgi.dll/d3d11.dll/etc...)
+			
+			- Perform a second review of this applications functions, ensuring it operates correctly. It seems like only a fraction of my entire shader library is being detected by when opening the Reshade "Home" menu.
+		
+		
+		
+
+=========================================================================================================================================================================================================================
+ -------------------------- # Done # -----------------------------------
+
+ - Improving the GUI (provide more detail on where to move GUI elements)
+    x- Mod path at the top
+	x- Presets save and load below that
+	x- Import settings and Global adjustments 
+	x- (global adjustments needs a second pass, it doesnt seem to be working well together with the UI. The generated mod color values are fine, and so is the GUI when I reload it, but before reloading the GUI, the square color picker swabs all appear as black. It also doesnt update in real-time, instead needing the apply button to be pressed to take effect, changes should be applied in real-time and "apply" should save those changes made.)
+	x- (Import settings does not seem to be working well, it seems to only be able to read a settings.json if it includes all of the UI elements avaliable to customize, rather it should pull whatever color values it can from the import and any UI elements not found in the import should stay at whatever value they currently are in the GUI).
+	x- "Def   Color Picker    Hex Code" do not line up correctly - additionally, the spacing, shape, and presentation of all UI elements should get a second pass to assure a modern sleek design.
+	x- When restoring colors to default, it functionally works correctly, however the color picker squares all turn black.
+	x- there is alot of free space left in the window, we should move towards formatting the GUI assuming it would be fullscreened on a 1920x1080 monitor
+ 
+ Future improvements 
+ - complimentary color suggestions
+ - UI improvements, possibly an entire rebuild from dearpygui to a better looking UI
+ - Live preview overhaul, what is needed from me (in game screenshots, etc).
+ 
+ 
+ 
+ -----------------------------------------------------------------------------
+ 
+  -------  FOR AI  ------
+  
+  Bug Fixing:
+  - Import, Global adjustments, and Restoring to Default all seem to work (mostly), however the color picker swab become a deep black and it only displays its actual color when I restart the .exe
+  - Global adjustments doesnt update colors viuslly as its adjusted, instead needing the apply button to be pressed for it to take effect. Changes should be applied in real-time and "apply" should save those changes made. The slider values are also extremely sensitive.
+  - Import settings seems to only work if all possible color UI elements are present in the .json file. Rather, it should parse the .json file and take from it whatever UI element color values it can find, any UI elements not found should remain whatever color they are curerntly in the GUI.
+  Reformatting the GUI:
+  - There is alot of free space left in the application window, we should move towards formatting the GUI assuming it would be fullscreened on a standard 1920x1080 monitor.
+  - The "Set Mod Path" UI element should be at the top, depening on the final formatting or window size, "Save Preset" and "Load Preset" need to be after or below Mod path. "Import settings" and "Global adjustments" should be below these elements.
+  - "Def   Color Picker    Hex Code" do not line up correctly with thier interactable GUI parts underneath them, perhaps find a way to make this text not looks so out of place - additionally, the spacing, shape, and presentation of all UI elements should get a second pass to assure a modern sleek design (Optionally moving away from using dearpygui to a better looking UI)
+  Final touches:
+  - Complimentary color suggestions 
+  - Aforementioned rebuild/moving away from dearpygui to a better more modern looking UI
+  - Let the user customize the colors of the Star UI GUI
+  The Last and Largest project:
+  - A complete overhaul to the Live-Preview. I can provide you with screenshots, multi-layer UI assests, etc. You just tell me what you need, I'm skilled with photoshop and layering. For the end goal, I want it to be as accurate as an in game represenatation as possible.  
+  
+  ---------------------------
+  Second Pass:
+  - The Color picker swab colors are dark when starting the GUI, they only change to their correct color once edited through the color picker.
+  - When using the global adjust, we shouldn't cover up the background, it makes it hard to see the adjustments.
+  - The 'Search' function should trade positions with the 'Save Preset' & 'Load Preset' functions.
+  - Default , Color Picker , Hex , and Key Name - should all line up with their respective columns below them, otherwise it looks off.
+  
+  ---------------------------
+  
+ Notes v2
+ - Add tooltip to "Import settings" (and other elements).
+ - Integrate Complimentary Color Suggestions for the color swab functionality. 
+ - Add a color pallatte button left of the 'mod path' element, when pressed, this button will open a small menue that lets the user customize thier Star UI / GUI's colors
+ 
+ ----------------------------------------------------
+ 
+ ----------  The End is Near  ----------
+ 
+ - Reformat and better inegrate the complimentary color suggestions
+ - Add tooltip to "Import settings" (and other elements).
+ - Live Preview Overhaul
+ 
+ ---------------------
+ 
+ - General UI Clean-up
+	- Tighten Spacing
+	- Remove/Recolor Headers
+	- Change Descriptions/Wording
+ 
+ - Import Settings
+	- Rename or Tooltip "Import Settings" button to "Import Colors from Mod" / "Import Mod Colors"
+  
+ - "Restore Default" 
+	- Should dissappear when option is clicked 
+	- Better formatting/Sizing
+	
+ - "Generate Mod"
+	- Given confirmation message - "Mods Generated Succesfully! Make sure to enable the Star_UI mod!
+	
+ - Ideas
+	- Hightlight / Make Stand out - The Color Picker
+	
+}	
+===================================================================================================================================================================================================================================
+===================================================================================================================================================================================================================================
+									^^^^	----------- ABOVE FINISHED -----------	^^^^
+===================================================================================================================================================================================================================================
+===================================================================================================================================================================================================================================
+
+	- Live Previews
+	- First time start-up > Select game folder > Mods Folder > Import UI Assests
+	- Tripad Editor Restore Defaults should restore to the Settings > Default Text Library
+	- Drag Live Preview
+	- Popout Live Preview inheret .ico
+	- Keybinds: Navigation, Control to Zoom = Mouse zoom needs to disable the scrollbar, Tripad Editor faster use.
+	- Color descriptions
+	- Format UI Windows, Spacing, and Text
+	- Color Presets
+	- Add a few backgrounds (HUDless Screenshots)
+	- Check Custom Mod name
+	- Check importing mod functionality
+	- Check exporting mod functionality
+	- Push to Github
+	
+{	
+	==============================
+	I have alot to discuss with you:
+	- Is that true, the plug gets pulled on you? lol.
+    - How can you recompile the script just fine now? Is it because I sent you what you already did, therefore you didn't how to review it because you wrote it.
+	- I used beyond compare to compare your most recent Star UI build with my last, and I noticed you made a huge amount of changes, some of which I don't understand. Would you mind explaining them to me? For example, I saw you removed something to do with the Harmonies, yet in Star UI the harmonies still show up and function properly, so what was it that you removed? A left over arguement we weren't using?
+	(More to follow, but i'm spacing them out...)
+	^^^^^ DONE ^^^^
+	Interesting, I wonder if there is a way to increase your timeout limit for coding... I know you'd hate for me to have to go use Jules on Github *wink wink*. Regarding the Compare, right now I have your version as a different named.exe, I compare the two later and ask you, but from what I can tell, everything is fine. I'll let you know. I'm actually just going to send you the rest of my comments right now:
+	- I forgot, we needed to add a background layer slot or functionality to the preview, with the ability to toggle which background is being displayed. If you show me how I'm sure I could easily do it without needing you to redo a million things. I already have the backgrounds done, a few space versions,  and then a transparent one,  and then a white and black one for contrast.
+	-The Live preview looks amazing, literally so close to what it looks like in game, I thought for sure we'd have to mess around with tints and stuff, etc etc! Great work.
+	- The key  names are now being cut off in the columns despite having plenty more room to write their names, perhaps you or I arn't accounting for something there.
+	- What were using to render the images still has this odd artifacting around some of the images. I checked my .pngs, its not them, perhaps you can search around online to see if this is a known issue what whatever is rendering our images.
+	- The textures do not update when changed in the tripad editor, did you or I forget something?
+	- The pop-out window works, but it is limited to the Star UI application frame, which honestly doesnt make it that useful, can we remove that limitation or work around it?
+	- You mentioned using a scroll wheel to zoom in on the image, however all the scroll wheel does is move the scroll bar lol.
+}	^^^^^ DONE ^^^^
+
+{
+	- Fixing the white line rendering bug. Solutions.
+	- No fixes for bound window? Really? Solutions.
+	- Checkbox for toggleing scroll to zoom in live preview.
+	- Export needs to ask the user where to save the file.
+	- Add Background selector save.state + review the script and see if there are any other items we can add save.state to that we missed or just for quality of life.
+	- Texture imports = you made them react or update based on whether the user adjusts a slider in the Tripad Editor, however, what actually needs to happen is that the > The texture that is used in the live preview is based purely off of whatever texture the user has checkmarked in the live preview as "use this texture for export".
+	- I need to understand how to properly set the textures for the live preview, I tried switching my radar texture for a custom one and it came out weird (attache example images).
+	- The old previews are gone, I tried pasting them in but they are not there, perhaps we address this.
+}
+	
+{
+	So as review:
+	- First time setup
+	- Seperate/better Live Preview pop-out Window solutions
+	
+	
+	- Better rendering to avoid the artifacts (I think Option A might be better. Althought right about B fitting Starsector, since the preview is often scaled down, those blocky-er render styles might bite us in the ass). I propose you write a simple script, one with Option A and one with B, all the script does will let me view a single image, and zoom in and out. That way I'll clearly see which one handles the image better.
+	Additionally:
+	- Live preview needs to export the composite and include the edits made to the textures in the Tripad Editor. Currently it doesnt include those edits, it just exports the original unaltered texture into the composite. IE: I made a red texture yellow, exported it, the composite came out red.
+}
+	- Export Preivew with background checkbox
+	- save.state review
+	- Add mouse drag style moving to the live preview
+
+{
+Thanks for the rules tip.
+Brush up on the project and tell me when you're done reviewing, and ready to begin.
+
+Let's tackle the first time setup. Discuss and review this idea with me, suggest any improvements, things I missed, or issues:
+
+(add a way for me to disable this function within the script, whatever is most effective, commented out, on/off true or false, etc ~ Reason being, we are building this and I dont want to do the setup each time we make edits or I'm testing a new feature)
+-Consider that this is the first thing people will see when starting the application; presenation here is very important. Items need to formatted evenly, sized correctly, and generally look pleaseing. I suggest we have "Star UI" in big bold letters at the top, centered, acting as a header text. Perhaps above it, we use the applications .ICO to give the menu some extra color.
+-The user starts the Star UI application.
+-The application searches for a TOOL_CONFIG ie the Star_UI_Settings.json in the Star_UI folder > if found, application opens as normal > if not found, the user is forced into a "Star UI Setup" modal.
+-The modal we consist of the above mentioned presentation standards > Underneath the header will be the text "These settings can be changed later" > Underneath that will be the actual setup elements.
+-The setup elements will be simple, two folderpath selectors > The first is the Game Folder selector; the user presses button, locates his game folder using the file explorer, then confirms; The second will be the mod folder; the application will first search the games folder for a "mods" folder, if one is found, the location will be auto input; if no location is found, the field will remain blank until the user presses the button, and then uses the file explorer to locate the games mods folder.
+-Underneath these elements, will be a loading bar.
+-Lastly, underneath the loading bar will be the finish/complete setup button (or whatver word is used most commonly to complete setup modals), when the user is happy with the locations they've chosen, they will press the button. Once pressed, the application will make a copy of the assests from the games "\[Game Folder]\starsector-core\graphics\" and then paste these copies into a created folder of the path "Star_UI\Data\graphics_basegame". The files that are imported from the games graphics will be determined by the "Star_UI\Setup_Import.json" file, AND IMPORTANTLY, the import paste needs to respect the subfolder locations, keeping them when pasting.
+}
+
+
+{
+Before moving to the next 2 big overhuals, we need to do some clean-up and bug fixes.
+
+- You can remove the Black/White/Transparent Backgrounds from the Live Preview, I made my own .png versions.
+
+- The settings menu inside the application needs to reflect our addition of the Starsector Game Directory file path selector, it should be placed above our mod selector. Given this addition, it's assumable the Settings Modal will need to have extra height added to it to accomodate the changes.
+
+- In the settings menu there is our "Default Graphics Library", or something to that effect. After completeing the First time setup, the drop down selector for default graphics library doesn't display the option to select "graphics_basegame" until the application has been restarted. I need 1. the application to refresh this list after any imports, however is must effective, so that the graphics libraries properly display all options, and 2. I need for the "graphics_basegame" library option to be selected by default in the drop down.
+
+- The Setup modal doesnt seem to be properly in the center of the screen; despite the application full screening itself when started, the set up modal still seems to be slightly left and up, just like how it looked before we implemented the full screening.
+
+- In the Setup modal, the "STAR UI" text needs to bolded and have its size increased, and be centered under the Star_UI.png. If this isnt possible due to a DearPyGUI limitation, I will instead create a WordArt .png that we can place under the first .png.
+}
+
+
+
+{
+	John
+	- Confirm functionality of Star UI Setup / Settings / Mod Import
+
+Your latest addition.
+1. The cache has now shrunk in size. However, this cache still shows zero benefit. Loading startup times are not reduced, and the cache seems to do nothing for the user experience.
+2. The Pop-Out window has now become comepletley pitch black, not showing or displaying any textures, backgrounds, or masks. Additionally, it now tanks the fps of the Star UI program and dragging the pop-out window is extremely choppy.

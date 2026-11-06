@@ -1,0 +1,186 @@
+{
+    "Tri-Tachyon Corporate": {
+        "UI Framework": {
+            "standardUIIconColor": [100, 200, 255, 255],
+            "tooltipTitleAndLightHighlightColor": [0, 255, 255, 255],
+            "widgetBorderColorDark": [0, 50, 100, 255],
+            "widgetBorderColorBright": [0, 150, 255, 255],
+            "standardGridColor": [0, 200, 255, 50],
+            "tripadGridColor": [0, 100, 200, 255],
+            "tripadLineColor": [0, 200, 255, 255]
+        },
+        "HUD Buttons": {
+            "buttonBg": [0, 40, 80, 255],
+            "buttonBgDark": [0, 20, 40, 200],
+            "buttonText": [200, 240, 255, 255],
+            "buttonShortcut": [0, 255, 255, 255],
+            "bottomMenuButtonInsetColor": [0, 100, 200, 255]
+        },
+        "Text & Dialogue": {
+            "standardTextColor": [220, 240, 255, 255],
+            "hColor": [0, 255, 255, 255],
+            "textFriendColor": [0, 255, 200, 255],
+            "textEnemyColor": [255, 50, 50, 255],
+            "textNeutralColor": [100, 200, 255, 255]
+        },
+        "Resource Meters & Supply Bars": {
+            "progressBarStandardColor": [0, 180, 255, 255],
+            "progressBarFuelColor": [0, 150, 200, 255],
+            "progressBarCRColor": [0, 255, 200, 255],
+            "progressBarHullColor": [0, 100, 150, 255],
+            "progressBarWarningColor": [255, 200, 0, 255],
+            "progressBarDangerColor": [255, 0, 50, 255]
+        },
+        "Sector Map UI": {
+            "cloudColor": [200, 220, 255, 255],
+            "fogOfWarColor": [10, 20, 40, 255],
+            "iconWaypointColor": [0, 255, 255, 255]
+        }
+    },
+
+    "Hegemony Iron": {
+        "UI Framework": {
+            "standardUIIconColor": [255, 180, 100, 255],
+            "tooltipTitleAndLightHighlightColor": [255, 140, 0, 255],
+            "widgetBorderColorDark": [60, 40, 20, 255],
+            "widgetBorderColorBright": [180, 100, 40, 255],
+            "standardGridColor": [150, 100, 50, 60],
+            "tripadGridColor": [100, 70, 30, 255],
+            "tripadLineColor": [200, 120, 40, 255]
+        },
+        "HUD Buttons": {
+            "buttonBg": [50, 35, 25, 255],
+            "buttonBgDark": [30, 20, 10, 200],
+            "buttonText": [220, 210, 200, 255],
+            "buttonShortcut": [255, 140, 0, 255],
+            "bottomMenuButtonInsetColor": [150, 80, 20, 255]
+        },
+        "Text & Dialogue": {
+            "standardTextColor": [220, 220, 210, 255],
+            "hColor": [255, 140, 0, 255],
+            "textFriendColor": [200, 255, 0, 255],
+            "textEnemyColor": [255, 60, 0, 255],
+            "textNeutralColor": [200, 180, 150, 255]
+        },
+        "Resource Meters & Supply Bars": {
+            "progressBarStandardColor": [200, 100, 20, 255],
+            "progressBarFuelColor": [255, 120, 0, 255],
+            "progressBarCRColor": [150, 180, 50, 255],
+            "progressBarHullColor": [120, 100, 90, 255]
+        },
+        "Sector Map UI": {
+             "asteroidBeltMapColor": [100, 80, 60, 255],
+             "ringSystemMapColor": [120, 90, 70, 255]
+        }
+    },
+
+    "Sindrian Royal": {
+        "UI Framework": {
+            "standardUIIconColor": [200, 150, 255, 255],
+            "tooltipTitleAndLightHighlightColor": [255, 215, 0, 255],
+            "widgetBorderColorDark": [80, 0, 120, 255],
+            "widgetBorderColorBright": [150, 50, 200, 255],
+            "standardGridColor": [150, 50, 200, 60],
+            "tripadGridColor": [100, 0, 150, 255],
+            "tripadLineColor": [200, 50, 255, 255]
+        },
+        "HUD Buttons": {
+            "buttonBg": [60, 20, 80, 255],
+            "buttonBgDark": [30, 10, 40, 200],
+            "buttonText": [240, 220, 255, 255],
+            "buttonShortcut": [255, 215, 0, 255],
+            "bottomMenuButtonInsetColor": [140, 40, 180, 255]
+        },
+        "Text & Dialogue": {
+            "standardTextColor": [230, 220, 240, 255],
+            "hColor": [255, 215, 0, 255],
+            "textFriendColor": [180, 100, 255, 255],
+            "textEnemyColor": [255, 50, 50, 255],
+            "textNeutralColor": [180, 180, 180, 255]
+        },
+        "Resource Meters & Supply Bars": {
+            "progressBarStandardColor": [140, 0, 200, 255],
+            "progressBarFuelColor": [255, 200, 0, 255],
+            "progressBarCRColor": [200, 100, 255, 255],
+            "progressBarHullColor": [100, 80, 120, 255]
+        },
+        "Design Types": {
+            "Lion's Guard": [255, 215, 0, 255]
+        }
+    },
+
+    "Terminal Amber": {
+        "UI Framework": {
+            "standardUIIconColor": [255, 180, 0, 255],
+            "tooltipTitleAndLightHighlightColor": [255, 200, 50, 255],
+            "widgetBorderColorDark": [100, 60, 0, 255],
+            "widgetBorderColorBright": [255, 160, 0, 255],
+            "standardGridColor": [255, 160, 0, 40],
+            "tripadGridColor": [200, 120, 0, 255],
+            "tripadLineColor": [255, 180, 0, 255]
+        },
+        "HUD Buttons": {
+            "buttonBg": [40, 25, 0, 255],
+            "buttonBgDark": [20, 10, 0, 200],
+            "buttonText": [255, 190, 50, 255],
+            "buttonShortcut": [255, 255, 100, 255],
+            "bottomMenuButtonInsetColor": [200, 120, 0, 255]
+        },
+        "Text & Dialogue": {
+            "standardTextColor": [255, 180, 0, 255],
+            "hColor": [255, 220, 100, 255],
+            "textFriendColor": [200, 255, 0, 255],
+            "textEnemyColor": [255, 50, 0, 255],
+            "textNeutralColor": [200, 150, 50, 255],
+            "marketFlavorTextColor": [200, 140, 0, 255]
+        },
+        "Resource Meters & Supply Bars": {
+            "progressBarStandardColor": [255, 140, 0, 255],
+            "progressBarFuelColor": [255, 100, 0, 255],
+            "progressBarCRColor": [200, 180, 0, 255],
+            "progressBarHullColor": [150, 100, 0, 255]
+        },
+        "Sector Map UI": {
+            "cloudColor": [255, 200, 100, 255],
+            "fogOfWarColor": [30, 20, 0, 255]
+        }
+    },
+
+    "Void High Contrast": {
+        "UI Framework": {
+            "standardUIIconColor": [255, 255, 255, 255],
+            "tooltipTitleAndLightHighlightColor": [255, 255, 255, 255],
+            "widgetBorderColorDark": [50, 50, 50, 255],
+            "widgetBorderColorBright": [200, 200, 200, 255],
+            "standardGridColor": [100, 100, 100, 50],
+            "tripadGridColor": [80, 80, 80, 255],
+            "tripadLineColor": [180, 180, 180, 255]
+        },
+        "HUD Buttons": {
+            "buttonBg": [10, 10, 10, 255],
+            "buttonBgDark": [0, 0, 0, 255],
+            "buttonText": [255, 255, 255, 255],
+            "buttonShortcut": [255, 255, 0, 255],
+            "bottomMenuButtonInsetColor": [100, 100, 100, 255]
+        },
+        "Text & Dialogue": {
+            "standardTextColor": [240, 240, 240, 255],
+            "hColor": [255, 255, 255, 255],
+            "textFriendColor": [100, 255, 100, 255],
+            "textEnemyColor": [255, 50, 50, 255],
+            "textNeutralColor": [150, 150, 150, 255],
+            "textGrayColor": [100, 100, 100, 255]
+        },
+        "Resource Meters & Supply Bars": {
+            "progressBarStandardColor": [150, 150, 150, 255],
+            "progressBarFuelColor": [200, 200, 200, 255],
+            "progressBarCRColor": [100, 100, 100, 255],
+            "progressBarHullColor": [80, 80, 80, 255]
+        },
+        "Sector Map UI": {
+            "cloudColor": [255, 255, 255, 255],
+            "fogOfWarColor": [0, 0, 0, 255],
+            "noiseColor": [0, 0, 0, 255]
+        }
+    }
+}

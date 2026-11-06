@@ -1,0 +1,97 @@
+{
+    "Sector Map UI": {
+        "cloudColor": [255, 255, 255, 255],
+        "asteroidBeltMapColor": [70, 50, 40, 255],
+        "ringSystemMapColor": [100, 130, 145, 255],
+        "iconWaypointColor": [50, 150, 255, 255],
+        "fogOfWarColor": [70, 92, 114, 0],
+        "noiseColor": [40, 152, 176, 255]
+    },
+    "UI Framework": {
+        "standardUIIconColor": [155, 228, 255, 255],
+        "tooltipTitleAndLightHighlightColor": [203, 245, 255, 255],
+        "widgetBorderColorDark": [100, 200, 255, 255],
+        "widgetBorderColorBright": [100, 220, 255, 255],
+        "standardGridColor": [70, 200, 255, 75],
+        "tripadGridColor": [58, 241, 240, 255],
+        "tripadLineColor": [158, 241, 240, 255]
+    },
+    "HUD Buttons": {
+        "buttonBg": [70, 222, 255, 255],
+        "buttonBgDark": [31, 94, 112, 175],
+        "buttonText": [170, 222, 255, 255],
+        "buttonShortcut": [255, 210, 0, 255],
+        "bottomMenuButtonInsetColor": [87, 202, 250, 255]
+    },
+    "Text & Dialogue": {
+        "standardTextColor": [220, 220, 220, 255],
+        "storyOptionColor": [163, 239, 128, 255],
+        "marketFlavorTextColor": [180, 180, 180, 255],
+        "hColor": [255, 210, 0, 255],
+        "textFriendColor": [155, 255, 0, 255],
+        "textNeutralColor": [70, 200, 255, 255],
+        "textGrayColor": [175, 175, 175, 180],
+        "textEnemyColor": [255, 100, 0, 255],
+        "flatRedTextColor": [255, 0, 0, 255],
+        "darkRedTextColor": [155, 0, 0, 255],
+        "yellowTextColor": [255, 215, 0, 255],
+        "darkYellowTextColor": [155, 105, 0, 255]
+    },
+    "Resource Meters & Supply Bars": {
+        "progressBarStandardColor": [0, 121, 216, 255],
+        "progressBarCargoColor": [203, 203, 144, 255],
+        "progressBarCrewColor": [0, 225, 160, 255],
+        "progressBarCrewLossColor": [225, 80, 0, 255],
+        "progressBarFuelColor": [255, 125, 25, 255],
+        "progressBarHullColor": [120, 182, 182, 255],
+        "progressBarCRColor": [168, 204, 184, 255],
+        "progressBarFleetPointsColor": [0, 181, 216, 255],
+        "progressBarHangarSpaceColor": [0, 121, 216, 255],
+        "progressBarOverflowColor": [255, 0, 0, 200],
+        "progressBarWarningColor": [255, 210, 0, 255],
+        "progressBarDangerColor": [255, 50, 0, 255],
+        "graphMarinesColor": [111, 101, 11, 255],
+        "graphSuppliesColor": [225, 225, 80, 255]
+    },
+    "Tactical & Combat UI": {
+        "iconFriendColor": [0, 255, 0, 255],
+        "iconEnemyColor": [255, 0, 0, 255],
+        "iconNeutralShipColor": [75, 75, 75, 255],
+        "weaponArcColor": [255, 210, 0, 102],
+        "weaponArcFFColor": [255, 100, 0, 255]
+    },
+    "Weapon Mounts": {
+        "mountYellowColor": [255, 215, 0, 255],
+        "mountGreenColor": [155, 255, 0, 255],
+        "mountBlueColor": [70, 200, 255, 255],
+        "mountGrayColor": [255, 255, 255, 255],
+        "mountOrangeColor": [255, 165, 0, 255],
+        "mountCyanColor": [0, 255, 200, 255],
+        "mountCompositeColor": [215, 255, 0, 255]
+    },
+    "Design Types": {
+        "Common": [190, 200, 200, 255],
+        "Low Tech": [209, 110, 91, 255],
+        "Midline": [221, 201, 104, 255],
+        "High Tech": [160, 213, 225, 255]
+    },
+    "Factions": {
+        "Remnant": [70, 255, 235, 255],
+        "Pirate": [200, 0, 0, 255],
+        "Hegemony": [245, 150, 30, 255],
+        "Luddic Path": [150, 200, 0, 255],
+        "Luddic Church": [76, 169, 20, 255],
+        "Persean League": [220, 185, 20, 255],
+        "Lion's Guard": [160, 0, 95, 255],
+        "Unknown": [155, 155, 155, 255],
+        "Domain Restricted": [155, 155, 155, 255],
+        "Fabrique Orbitale": [100, 100, 200, 255],
+        "Exodyne Biotech": [201, 219, 4, 255],
+        "Ko Combine": [221, 201, 104, 255],
+        "Eridani-Utopia Terraforming": [204, 229, 255, 255],
+        "Mbaye-Gogol": [233, 233, 121, 255],
+        "Bhilai Astra": [200, 80, 67, 255],
+        "Threat": [130, 155, 145, 255],
+        "Shrouded Dweller": [150, 10, 30, 255]
+    }
+}

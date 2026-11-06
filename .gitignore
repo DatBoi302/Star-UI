@@ -1,0 +1,11 @@
+# Exclusions
+/Star_UI/Data/
+/Star_UI/.cache/
+/Star_UI/Presets/
+/ships.lnk
+/Starsector.lnk
+/Docs/Mods
+
+# Inclusions (overriding the Presets exclusion above)
+!/Star_UI/Presets/Settings/Debug.json
+!/Star_UI/Presets/Settings/Default.json

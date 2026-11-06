@@ -1,0 +1,48 @@
+
+						---- Theme Preset ----
+						======================	
+                            [Explanation]
+        [Remeber, you can use the existing themes as reference]
+
+
+{     <----- Only needed at the top of the file, dont add this if simply pasting this template below any of the other themes! 
+    "TEMPLATE": { <---- Theme name
+       "WindowBg": [30, 30, 30],  <---- Main window color
+       "ChildBg": [40, 40, 40],  <---- Windows inside the main window color IE Star UI vs. Adjustments window
+       "Border": [100, 100, 100], <--\/--\/-- Most others are self explanatory
+       "Button": [60, 60, 60],
+       "ButtonHover": [80, 80, 80],
+       "ButtonActive": [100, 100, 100],
+       "Header": [70, 70, 70],
+       "TitleBg": [70, 70, 70],
+       "TitleBgActive": [90, 90, 90],
+       "TitleBgCollapsed": [30, 30, 30],
+       "Text": [255, 255, 255],
+       "CheckMark": [255, 255, 255],
+       "FrameBg": [20, 20, 20],
+       "FrameBgHovered": [40, 40, 40],
+       "FrameBgActive": [60, 60, 60] <----- Last Bracket of the LAST item should not have a " , " comma, this is true for all themes!
+    }   <----- Last Bracket of the LAST theme should not have a " , " comma. All other themes above ^ should!
+
+
+                 ---- Copy/Paste ----
+				 ====================
+				 
+{
+    "TEMPLATE": {
+       "WindowBg": [30, 30, 30],
+       "ChildBg": [40, 40, 40],
+       "Border": [100, 100, 100],
+       "Button": [60, 60, 60],
+       "ButtonHover": [80, 80, 80],
+       "ButtonActive": [100, 100, 100],
+       "Header": [70, 70, 70],
+       "TitleBg": [70, 70, 70],
+       "TitleBgActive": [90, 90, 90],
+       "TitleBgCollapsed": [30, 30, 30],
+       "Text": [255, 255, 255],
+       "CheckMark": [255, 255, 255],
+       "FrameBg": [20, 20, 20],
+       "FrameBgHovered": [40, 40, 40],
+       "FrameBgActive": [60, 60, 60]
+    }

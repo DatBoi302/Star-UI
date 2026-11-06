@@ -1,0 +1,171 @@
+{
+    "Player": {
+        "file": "player.faction",
+        "colors": {
+            "color": [170, 222, 255, 127],
+            "baseUIColor": [170, 222, 255, 255],
+            "secondaryUIColor": [255, 155, 100, 255],
+            "darkUIColor": [31, 94, 112, 175],
+            "gridUIColor": [70, 200, 255, 75],
+            "brightUIColor": [203, 245, 255, 255]
+        },
+        "active": ["color", "baseUIColor", "darkUIColor", "gridUIColor"]
+    },
+    "Derelict": {
+        "file": "derelict.faction",
+        "colors": {
+            "color": [100, 100, 100, 255],
+            "baseUIColor": [155, 155, 155, 255],
+            "darkUIColor": [31, 94, 112, 175],
+            "gridUIColor": [70, 200, 255, 75]
+        },
+        "active": ["color", "baseUIColor"]
+    },
+    "Dweller": {
+        "file": "dweller.faction",
+        "colors": {
+            "color": [150, 10, 30, 255],
+            "baseUIColor": [150, 10, 30, 255]
+        },
+        "active": ["color", "baseUIColor"]
+    },
+    "Hegemony": {
+        "file": "hegemony.faction",
+        "colors": {"color": [245, 150, 30, 255]},
+        "active": ["color"]
+    },
+    "Independent": {
+        "file": "independent.faction",
+        "colors": {"color": [150, 150, 150, 255]},
+        "active": ["color"]
+    },
+    "Knights of Ludd": {
+        "file": "knights_of_ludd.faction",
+        "colors": {
+            "color": [30, 80, 0, 255],
+            "baseUIColor": [75, 200, 0, 255],
+            "darkUIColor": [32, 85, 0, 175],
+            "gridUIColor": [95, 255, 0, 75]
+        },
+        "active": ["color", "baseUIColor", "darkUIColor", "gridUIColor"]
+    },
+    "Lions Guard": {
+        "file": "lions_guard.faction",
+        "colors": {
+            "color": [160, 0, 95, 255],
+            "baseUIColor": [200, 0, 125, 255],
+            "darkUIColor": [100, 0, 60, 175],
+            "gridUIColor": [200, 0, 125, 75],
+            "brightUIColor": [231, 98, 206, 255]
+        },
+        "active": ["baseUIColor", "darkUIColor", "gridUIColor", "brightUIColor"]
+    },
+    "Luddic Church": {
+        "file": "luddic_church.faction",
+        "colors": {
+            "color": [5, 115, 10, 255],
+            "baseUIColor": [75, 200, 0, 255],
+            "darkUIColor": [32, 85, 0, 175],
+            "gridUIColor": [95, 255, 0, 75]
+        },
+        "active": ["color", "baseUIColor", "darkUIColor", "gridUIColor"]
+    },
+    "Luddic Path": {
+        "file": "luddic_path.faction",
+        "colors": {
+            "color": [180, 255, 95, 255],
+            "baseUIColor": [150, 200, 0, 255],
+            "darkUIColor": [52, 85, 0, 175],
+            "gridUIColor": [180, 255, 0, 75]
+        },
+        "active": ["color", "baseUIColor", "darkUIColor", "gridUIColor"]
+    },
+    "Mercenary": {
+        "file": "mercenary.faction",
+        "colors": {"color": [150, 150, 150, 255]},
+        "active": ["color"]
+    },
+    "Neutral": {
+        "file": "neutral.faction",
+        "colors": {
+            "color": [100, 100, 100, 255],
+            "baseUIColor": [155, 155, 155, 255],
+            "darkUIColor": [31, 94, 112, 175],
+            "gridUIColor": [70, 200, 255, 75]
+        },
+        "active": ["color", "baseUIColor"]
+    },
+    "Omega": {
+        "file": "omega.faction",
+        "colors": {
+            "color": [70, 255, 235, 255],
+            "baseUIColor": [70, 255, 235, 255]
+        },
+        "active": ["color", "baseUIColor"]
+    },
+    "Persean League": {
+        "file": "persean_league.faction",
+        "colors": {
+            "color": [220, 185, 55, 255],
+            "baseUIColor": [75, 200, 0, 255],
+            "darkUIColor": [32, 85, 0, 175],
+            "gridUIColor": [95, 255, 0, 75]
+        },
+        "active": ["color"]
+    },
+    "Pirates": {
+        "file": "pirates.faction",
+        "colors": {
+            "color": [255, 0, 0, 255],
+            "baseUIColor": [200, 0, 0, 255],
+            "darkUIColor": [85, 0, 0, 175],
+            "gridUIColor": [255, 0, 0, 75],
+            "brightUIColor": [231, 98, 103, 255]
+        },
+        "active": ["color", "baseUIColor", "darkUIColor", "gridUIColor", "brightUIColor"]
+    },
+    "Poor": {
+        "file": "poor.faction",
+        "colors": {"color": [150, 150, 150, 255]},
+        "active": ["color"]
+    },
+    "Remnant": {
+        "file": "remnants.faction",
+        "colors": {
+            "color": [70, 255, 235, 255],
+            "baseUIColor": [70, 255, 235, 255],
+            "darkUIColor": [31, 94, 112, 175],
+            "gridUIColor": [70, 200, 255, 75]
+        },
+        "active": ["color", "baseUIColor"]
+    },
+    "Sindrian Diktat": {
+        "file": "sindrian_diktat.faction",
+        "colors": {
+            "color": [180, 0, 120, 255],
+            "baseUIColor": [200, 0, 125, 255],
+            "darkUIColor": [100, 0, 60, 175],
+            "gridUIColor": [200, 0, 125, 75],
+            "brightUIColor": [231, 98, 206, 255]
+        },
+        "active": ["color", "baseUIColor", "darkUIColor", "gridUIColor", "brightUIColor"]
+    },
+    "Sleeper": {
+        "file": "sleeper.faction",
+        "colors": {"color": [150, 150, 150, 255]},
+        "active": ["color"]
+    },
+    "Threat": {
+        "file": "threat.faction",
+        "colors": {
+            "color": [130, 155, 145, 255],
+            "baseUIColor": [130, 155, 145, 255]
+        },
+        "active": ["color", "baseUIColor"]
+    },
+    "Tritachyon": {
+        "file": "tritachyon.faction",
+        "colors": {"color": [135, 206, 255, 255]},
+        "active": ["color"]
+    }
+}
